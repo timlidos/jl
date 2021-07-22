@@ -1,4 +1,4 @@
-package com.weightwathers.drivers;
+package com.weightwatchers.drivers;
 
 public enum DriverType {
     CHROME,

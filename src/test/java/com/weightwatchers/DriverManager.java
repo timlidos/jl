@@ -1,7 +1,7 @@
-package com.weightwathers;
+package com.weightwatchers;
 
-import com.weightwathers.drivers.DriverFactory;
-import com.weightwathers.drivers.DriverType;
+import com.weightwatchers.drivers.DriverFactory;
+import com.weightwatchers.drivers.DriverType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.SessionId;

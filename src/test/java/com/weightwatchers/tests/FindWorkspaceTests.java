@@ -1,8 +1,8 @@
-package com.weightwathers.tests;
+package com.weightwatchers.tests;
 
-import com.weightwathers.pages.FindWorkshopPage;
-import com.weightwathers.base.BrowseBase;
-import com.weightwathers.pages.FindWorkshopResultPage;
+import com.weightwatchers.pages.FindWorkshopPage;
+import com.weightwatchers.base.BrowseBase;
+import com.weightwatchers.pages.FindWorkshopResultPage;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

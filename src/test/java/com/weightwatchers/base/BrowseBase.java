@@ -1,6 +1,6 @@
-package com.weightwathers.base;
+package com.weightwatchers.base;
 
-import com.weightwathers.DriverManager;
+import com.weightwatchers.DriverManager;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;

@@ -1,6 +1,6 @@
-package com.weightwathers.pages;
+package com.weightwatchers.pages;
 
-import com.weightwathers.base.BaseWorkspacePage;
+import com.weightwatchers.base.BaseWorkspacePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
