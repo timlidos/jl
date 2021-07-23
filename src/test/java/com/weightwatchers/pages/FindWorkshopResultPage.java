@@ -10,10 +10,10 @@ import java.util.List;
 
 public class FindWorkshopResultPage extends BaseWorkspacePage {
 
-    @FindBy(xpath = "//div[contains(@class, 'addressContainer')]//h1")
+    @FindBy(className = "locationName-1jro_")
     protected WebElement locationTitle;
 
-    @FindBy(xpath = "//div[contains(@class, 'hours')]//div[contains(@class, 'title')]")
+    @FindBy(className = "title-3o8Pv")
     protected WebElement businessHoursLabel;
 
     public FindWorkshopResultPage() {
@@ -34,11 +34,11 @@ public class FindWorkshopResultPage extends BaseWorkspacePage {
         String day;
         String time;
         List<String> result = new ArrayList<>();
-        String xPath = "//div[contains(@class, 'hoursWrapper')]//div[contains(@class, 'day-')]";
-        List<WebElement> days = driver().findElements(By.xpath(xPath));
+        String className = "day-CZkCD";
+        List<WebElement> days = driver().findElements(By.className(className));
         for (WebElement element : days) {
-            day = element.findElement(By.xpath("./div[contains(@class, 'dayName')]")).getAttribute("innerText");
-            time = element.findElement(By.xpath("./div[contains(@class, 'times')]")).getAttribute("innerText");
+            day = driver().findElement(By.className("dayName-CTNC6")).getAttribute("innerText");
+            time = driver().findElement(By.className("times-fms3v")).getAttribute("innerText");
             result.add(day + "\n" + time);
         }
         return result;

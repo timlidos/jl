@@ -7,19 +7,19 @@ import org.openqa.selenium.support.FindBy;
 
 public class FindWorkshopPage extends BaseWorkspacePage {
 
-    @FindBy(xpath = "//span[normalize-space()='Studio']")
+    @FindBy(className = "studioIcon-2TdMR")
     protected WebElement studioLabel;
 
     @FindBy(id = "location-search")
     protected WebElement searchTextBox;
 
-    @FindBy(xpath = "//div[contains(@class, 'resultContainer')]")
+    @FindBy(className = "resultContainer-m4u0m")
     protected WebElement resultsBlock;
 
-    @FindBy(xpath = "//div[contains(@class, 'linkContainer')]/a")
+    @FindBy(className = "linkUnderline-1_h4g")
     protected WebElement firstResultTitle;
 
-    @FindBy(xpath = "//span[contains(@class, 'distance')]")
+    @FindBy(className = "distance-OhP63")
     protected WebElement firstResultDistance;
 
     public FindWorkshopPage() {
@@ -57,10 +57,10 @@ public class FindWorkshopPage extends BaseWorkspacePage {
         return firstResultDistance.getText();
     }
 
-    public FindWorkshopResultPage clickFirstResultTitle() {
+    public com.weightwatchers.pages.FindWorkshopResultPage clickFirstResultTitle() {
         waitForVisibility(firstResultTitle);
         firstResultTitle.click();
-        return new FindWorkshopResultPage();
+        return new com.weightwatchers.pages.FindWorkshopResultPage();
     }
 
     public FindWorkshopPage openFindWorkshopPage(String url) {
