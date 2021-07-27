@@ -2,12 +2,13 @@ package com.weightwatchers.base;
 
 import com.weightwatchers.DriverManager;
 import io.qameta.allure.Allure;
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 
@@ -57,13 +58,13 @@ public abstract class BrowseBase {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         DriverManager.setUpBrowser();
         baseUrl = "https://www.weightwatchers.com/us/find-a-workshop";
     }
 
-    @AfterMethod
+    @AfterClass
     public void createScreenshot() {
         File directory = new File("screenshots/");
         if (!directory.exists())
