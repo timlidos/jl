@@ -4,6 +4,7 @@ import com.weightwatchers.pages.FindWorkshopPage;
 import com.weightwatchers.base.BrowseBase;
 import com.weightwatchers.pages.FindWorkshopResultPage;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -35,20 +36,21 @@ public class FindWorkspaceTests extends BrowseBase {
                 .clickStudioLabel()
                 .searchFor(zipCode);
 
-        String firstResultTitle = findWorkshopPage.getFirstResultTitle();
-        String firstResultDistance = findWorkshopPage.getFirstResultDistance();
+        String closestDistance = findWorkshopPage.getClosestDistance();
+        String closestDistanceTitle = findWorkshopPage.getClosestDistanceTitle(closestDistance);
 
         System.out.println("-------------------");
-        System.out.println("Title: " + firstResultTitle);
-        System.out.println("Distance: " + firstResultDistance);
+        System.out.println("Title: " + closestDistanceTitle);
+        System.out.println("Distance: " + closestDistance);
         System.out.println("-------------------");
 
         findWorkshopPage
-                .clickFirstResultTitle();
+                .clickClosestResultTitle();
 
-        Assert.assertEquals(findWorkshopResultPage.getLocationTitle(), firstResultTitle);
+        Assert.assertEquals(findWorkshopResultPage.getLocationTitle(), closestDistanceTitle);
 
-        findWorkshopResultPage.clickBusinessHoursLabel();
+        findWorkshopResultPage
+                .clickBusinessHoursLabel();
         List<String> businessHours = findWorkshopResultPage.getBusinessHours();
         for (String s : businessHours) {
             System.out.println(s);
